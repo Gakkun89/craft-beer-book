@@ -1,0 +1,11 @@
+<h2>Beers</h2>
+<% @beers.each do |beer| %>
+<!-- TODO : Sort out alignment -->
+<div id="beer-display">
+  <b><p id="title">Beer  -   Brewery</p></b>
+  <ul>
+    <b><a href="/beers/<%= beer['name']%>" title="<%= beer['name']%>"><%= beer['name']%> - <%= beer['brewery']%></a></b>
+  </ul>
+<% end %>
+</div>
+
