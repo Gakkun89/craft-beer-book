@@ -7,10 +7,14 @@ require 'sqlite3'
 DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/craft-beer-book'))
 DB.results_as_hash = true
 get '/' do
-  @beers = DB.execute('SELECT * FROM beers')
+  @beers = DB.execute('SELECT id, name, brewery FROM beers')
   erb :home
 end
 
+get '/beers/:id' do
+  @beer = DB.execute("SELECT * FROM beers WHERE id = #{params[:id]} ")[0]
+  erb :beers
+end
 # -- TODO --
 # Implement a way to manually add beers
 # Nav bar in layout? - click for options, add etc
