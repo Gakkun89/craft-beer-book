@@ -12,11 +12,19 @@ get '/' do
 end
 
 get '/beers/:id' do
-  @beer = DB.execute("SELECT * FROM beers WHERE id = #{params[:id]} ")[0]
+  @beer = DB.execute('SELECT * FROM beers WHERE id = ? ', params[:id])[0]
   erb :beers
 end
+
+get '/add' do
+
+
+  erb :add
+end
+
 # -- TODO --
 # Implement a way to manually add beers
+# Work our logic for dealing with import or manual import
 # Nav bar in layout? - click for options, add etc
 # Create a Scraper class to get the data from BA (models?)
 # Research how to scrape images, save them and then reference them in the DB

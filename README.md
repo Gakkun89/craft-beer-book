@@ -16,3 +16,4 @@ Tech:
 - Ruby
 - Sinatra for web app
 - SQL.lite for DB
+- Nokogiri for parsing
