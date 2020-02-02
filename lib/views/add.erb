@@ -10,7 +10,7 @@
 
 <div id="manual">
 <p> Input manually</p>
-<form name="manual">
+<form name="manual" method="POST" action="/mconfirm">
  <p>Name: <input type="text" name="name"></p>
  <p>Brewery: <input type="text" name="brewery"></p>
  <p>ABV: <input type="number" name="abv">%</p>
@@ -18,6 +18,6 @@
  <p>Notes: <input type="text" name="notes"></p>
  <p>Score out of 5: <input type="number" name="uscore" min="0" max="5"></p>
  <p>Image: <input type="file" name="img"></p>
-  <input type="sybmit" name="submit">
+  <input type="submit" name="submit">
 </form>
 </div>
