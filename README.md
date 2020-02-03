@@ -17,3 +17,4 @@ Tech:
 - Sinatra for web app
 - SQL.lite for DB
 - Nokogiri for parsing
+- ActiveRecord for DB management

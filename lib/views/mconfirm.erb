@@ -7,3 +7,8 @@ Style: <%= @beer["style"]%>
 Notes: <%= @beer["notes"]%>
 Score: <%= @beer["uscore"]%> /5
 Image: <%= @beer["image"]%>
+
+<a href="/">Cancel</a>
+<form method="get" action="/mconfirm">
+  <input type="submit" name="confirm" value="Confirm">
+</form>
