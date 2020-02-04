@@ -4,7 +4,7 @@ require "open-uri"
 class BAScraperResults
   def initialize(query)
     @url = "https://www.beeradvocate.com/search/?q=#{query}"
-    @doc = Nokogiri::HTML(open("search.html"))
+    @doc = Nokogiri::HTML(open(@url))
     @names = []
     @descriptions = []
   end
@@ -57,5 +57,3 @@ class BAScraperResults
     }
   end
 end
-scrape = BAScrapeResults.new("lol")
-p scrape.search_title_scrape
