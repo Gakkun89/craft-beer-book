@@ -9,12 +9,12 @@ require_relative 'models/beer'
 DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/craft-beer-book'))
 DB.results_as_hash = true
 get '/' do
-  @beers = DB.execute('SELECT id, name, brewery FROM beers')
+  @beers = Beer.all.order(name: :asc)
   erb :home
 end
 
 get '/beers/:id' do
-  @beer = DB.execute('SELECT * FROM beers WHERE id = ? ', params[:id])[0]
+  @beer = Beer.find(params[:id])
   erb :beers
 end
 

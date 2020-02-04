@@ -34,7 +34,7 @@ db_namespace = namespace :db do
 
   desc 'migrate the database (options: VERSION=x).'
   task :migrate do
-    ActiveRecord::Migrator.migrations_paths = 'db/migrate'
+    ActiveRecord::Migrator.migrations_paths = 'lib/db/migrate'
     ActiveRecord::Migration.verbose = true
     version = ENV['VERSION'] ? ENV['VERSION'].to_i : nil
     args = [ActiveRecord::Migrator.migrations_paths]
@@ -50,7 +50,7 @@ db_namespace = namespace :db do
 
   desc 'populate the database with sample data'
   task :seed do
-    require "#{__dir__}/db/seeds.rb"
+    require "#{__dir__}/lib/db/seeds.rb"
   end
 
   desc 'Gives you a timestamp for your migration file name'
@@ -62,7 +62,7 @@ db_namespace = namespace :db do
     desc 'Create a db/schema.rb file that can be portably used against any DB supported by AR'
     task :dump do
       require 'active_record/schema_dumper'
-      filename = 'db/schema.rb'
+      filename = 'lib/db/schema.rb'
 
       File.open(filename, "w:utf-8") do |file|
         ActiveRecord::SchemaDumper.dump(ActiveRecord::Base.connection, file)
