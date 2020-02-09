@@ -1,10 +1,15 @@
 <h3> Add <%=@beer[:name]%>?</h3>
 
 <div class="beer-card">
+ <form method="POST" action="/add_ba/<%=@url%>">
   <img src="https://cdn.beeradvocate.com/im/beers/<%=@url%>.jpg" alt="Beer image">
-  <p>Name: <%=@beer[:name]%> </p>
-  <p>Brewery: <%=@beer[:brewery]%></p>
-  <p>ABV: <%=@beer[:abv]%>%</p>
-  <p>Style: <%=@beer[:style]%></p>
-  <p>BA Score: <%=@beer[:bascore]%> /100</p>
+  <label for="name">Name: </label><input name="name" type="text" value="<%=@beer[:name]%>">
+  <label for="brewery">Brewery: </label> <input type="text" name="brewery" value="<%=@beer[:brewery]%>">
+  <label for="abv">ABV:</label>  <input type="number" name="abv" value="<%=@beer[:abv]%>">%
+  <label for="style">Style:</label>  <input type="text" name="style" value="<%=@beer[:style]%>">
+  <label for="notes">Notes:</label>  <input type="text" name="notes">
+  <label for="uscore">Your score:</label><input type="number" name="uscore" min="0" max="5"> /5
+  <label for="bascore">BA Score:</label> <input type="number" name="bascore" value="<%=@beer[:bascore]%>"> /100
+  <input type="submit" value="Add to Collection">
+  </form>
 </div>

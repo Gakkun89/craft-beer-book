@@ -37,6 +37,20 @@ get '/add_ba/:id' do
   erb :add_ba
 end
 
+post '/add_ba/:id' do
+  @beer = params
+  Beer.create(
+    name: params[:name],
+    brewery: params[:brewery],
+    abv: params[:abv],
+    style: params[:style],
+    bascore: params[:bascore],
+    notes: params[:notes],
+    uscore: params[:uscore]
+  )
+  redirect "/"
+end
+
 post '/madd' do
   @beer = params
   Beer.create(name: params[:name],
@@ -47,11 +61,10 @@ post '/madd' do
               uscore: params[:uscore],
               img: params[:img])
   redirect "/"
-  erb :mconfirm
 end
 
 # -- TODO --
-# Add confirmation screen to adding beers?
+# CSS (Bootstrap?)
+# Add confirmation screen to adding beers? (modal on bootstrap?)
 # Nav bar in layout? - click for options, add etc
-# Create a Scraper class to get the data from BA (models?)
-# Research how to scrape images, save them and then reference them in the DB
+# Research how to save images and then reference them in the DB

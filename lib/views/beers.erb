@@ -1,10 +1,10 @@
-<h1>Beer Page test </h1>
+<h1><%= @beer["name"] %> - <%= @beer["brewery"] %></h1>
 <!-- TODO put all the data in a table -->
 Name: <%= @beer["name"] %>
 Brewery: <%= @beer["brewery"] %>
 ABV: <%= @beer["abv"] %>%
 Style: <%= @beer["style"] %>
 Notes: <%= @beer["notes"] %>
-BA Score: <%= @beer["ba-score"] %>
-User Score: <%= @beer["usr-score"] %>
+BA Score: <%= @beer["bascore"] %>
+User Score: <%= @beer["uscore"] %>
 img: <%= @beer["img"] %>
