@@ -1,0 +1,12 @@
+<h3> Top 5 <%=@query.capitalize%> beers</h3>
+
+<% @results.each do |beer, beer_hash|%>
+
+<div class="beer-card">
+  <img src="https://cdn.beeradvocate.com/im/beers/<%=beer_hash[:url]%>.jpg" alt="Beer image">
+  <p>Name: <%=beer_hash[:name]%> </p>
+  <p>Brewery: <%=beer_hash[:brewery]%> </p>
+  <p>Style: <%=beer_hash[:style]%> </p>
+  <a href="/add_ba/<%=beer_hash[:url]%>">Add</a>
+</div>
+<%end%>
