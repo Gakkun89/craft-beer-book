@@ -7,4 +7,4 @@ Style: <%= @beer["style"] %>
 Notes: <%= @beer["notes"] %>
 BA Score: <%= @beer["bascore"] %>
 User Score: <%= @beer["uscore"] %>
-img: <%= @beer["img"] %>
+img: <img src="https://cdn.beeradvocate.com/im/beers/<%=@beer["img"]%>.jpg" alt="<%= @beer["name"] %> picture">

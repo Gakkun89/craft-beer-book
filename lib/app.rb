@@ -46,7 +46,8 @@ post '/add_ba/:id' do
     style: params[:style],
     bascore: params[:bascore],
     notes: params[:notes],
-    uscore: params[:uscore]
+    uscore: params[:uscore],
+    img: params[:id]
   )
   redirect "/"
 end
