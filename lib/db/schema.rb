@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 2020_02_04_154347) do
   create_table "beers", force: :cascade do |t|
     t.string "name"
     t.string "brewery"
-    t.integer "abv"
+    t.float "abv"
     t.string "style"
     t.string "notes"
-    t.integer "uscore"
+    t.float "uscore"
     t.integer "bascore"
     t.string "img"
   end

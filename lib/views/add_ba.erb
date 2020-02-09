@@ -8,7 +8,7 @@
   <label for="abv">ABV:</label>  <input type="number" name="abv" value="<%=@beer[:abv]%>">%
   <label for="style">Style:</label>  <input type="text" name="style" value="<%=@beer[:style]%>">
   <label for="notes">Notes:</label>  <input type="text" name="notes">
-  <label for="uscore">Your score:</label><input type="number" name="uscore" min="0" max="5"> /5
+  <label for="uscore">Your score:</label><input type="number" name="uscore" placeholder="0.0" step="0.1" min="0" max="5"> /5
   <label for="bascore">BA Score:</label> <input type="number" name="bascore" value="<%=@beer[:bascore]%>"> /100
   <input type="submit" value="Add to Collection">
   </form>
