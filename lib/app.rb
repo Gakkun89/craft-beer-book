@@ -64,6 +64,11 @@ post '/madd' do
   redirect "/"
 end
 
+get '/delete/:id' do
+  Beer.destroy(params[:id])
+  redirect "/"
+end
+
 # -- TODO --
 # CSS (Bootstrap?)
 # Add confirmation screen to adding beers? (modal on bootstrap?)

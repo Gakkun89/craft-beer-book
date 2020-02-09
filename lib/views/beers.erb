@@ -8,3 +8,5 @@ Notes: <%= @beer["notes"] %>
 BA Score: <%= @beer["bascore"] %>
 User Score: <%= @beer["uscore"] %>
 img: <img src="https://cdn.beeradvocate.com/im/beers/<%=@beer["img"]%>.jpg" alt="<%= @beer["name"] %> picture">
+
+<a href="/delete/<%=@beer["id"] %>">Delete beer</a>
