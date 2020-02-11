@@ -1,12 +1,26 @@
-<h2>Beers</h2>
-<b><p id="title">Beer  -   Brewery</p></b>
-<% @beers.each do |beer| %>
-<!-- TODO : Sort out alignment -->
-<div id="beer-display">
+<div class="row justify-content-center">
+  <h2>Beers</h2>
 
-  <ul>
-    <b><a href="/beers/<%= beer['id']%>" title="<%= beer['name']%>"><%= beer['name']%> - <%= beer['brewery']%></a></b>
-  </ul>
-<% end %>
+  <!-- TODO : Add hover image of beer -->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Brewery</th>
+      <th scope="col">User Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @beers.each do |beer| %>
+    <tr>
+      <th scope="row"><%=beer["id"]%></th>
+      <td><a href="/beers/<%= beer['id']%>" title="<%= beer['name']%>"><%= beer['name']%></a></td>
+      <td><%= beer['brewery']%></td>
+      <td><%= beer['uscore']%></td>
+    </tr>
+     <% end %>
+  </tbody>
+</table>
 </div>
-

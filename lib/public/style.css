@@ -6,11 +6,6 @@ body {
   display: flex;
 }
 
-.top-banner img{
-  width: 60px;
-  height: 60px;
-}
-
 .top-banner h1{
   margin-top: 5px;
 }
