@@ -1,23 +1,49 @@
 <h3> Add a new beer</h3>
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <div id="beer-advocate-search d-flex">
+    <h4> Import from Beeradvocate.com</h4>
+  <form name="ba-search" method= "GET" action="/searchresults">
+    <input type="text" name="query" class="form-control" placeholder="try a name, style or brewery..."> <!-- <button type="submit" name="submit" class="btn btn-info mt-2 hidden">Search</button> -->
 
-<div id="beer-advocate-search">
-  <p> Import from Beeradvocate.com:</p>
-<form name="ba-search" method= "GET" action="/searchresults">
-  <input type="text" name="query"> <input type="submit" name="submit">
+  </form>
+  </div>
 
-</form>
-</div>
-
-<div id="manual">
-<p> Input manually</p>
-<form name="manual" method="POST" action="/madd">
- <p>Name: <input type="text" name="name"></p>
- <p>Brewery: <input type="text" name="brewery"></p>
- <p>ABV: <input type="number" name="abv">%</p>
- <p>Style: <input type="text" name="style"></p>
- <p>Notes: <input type="text" name="notes"></p>
- <p>Score out of 5: <input type="number" name="uscore" min="0" max="5"></p>
- <p>Image: <input type="file" name="img"></p>
-  <input type="submit" name="submit">
-</form>
+  <div id="manual">
+     <div class="mb-4">
+                <!-- Gradient divider -->
+                <hr data-content="Or" class="hr-text">
+            </div>
+            <h4>Input Manually</h4>
+  <form name="manual" method="POST" action="/madd">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="brewery">Brewery:</label>
+      <input type="text" name="brewery" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="abv">ABV:</label>
+      <input type="number" name="abv" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="style">Style:</label>
+      <input type="text" name="style" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <input type="text" name="notes" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="uscore">Score (out of 5):</label>
+      <input type="number" name="uscore" class="form-control" placeholder="0.0" step="0.1" min="0" max="5">
+    </div>
+    <div class="form-group">
+      <label for="img">Image:</label>
+      <input type="file" name="img">
+    </div>
+    <button type="submit" class="btn btn-info">Add to Beer Book</button>
+  </form>
+  </div>
 </div>
