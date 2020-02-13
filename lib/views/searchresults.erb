@@ -1,12 +1,15 @@
 <h3> Top 5 <%=@query.capitalize%> beers</h3>
 
 <% @results.each do |beer, beer_hash|%>
-
-<div class="beer-card">
-  <img src="https://cdn.beeradvocate.com/im/beers/<%=beer_hash[:url]%>.jpg" alt="Beer image">
-  <p>Name: <%=beer_hash[:name]%> </p>
-  <p>Brewery: <%=beer_hash[:brewery]%> </p>
-  <p>Style: <%=beer_hash[:style]%> </p>
-  <a href="/add_ba/<%=beer_hash[:url]%>">Add</a>
+<div class="d-flex flex-column justify-content-center align-items-center">
+  <div class="d-flex card-beer mt-4 box-shadow-border rounded">
+    <img class="card-beer-image rounded box-shadow-border m-2 align-self-center" src="https://cdn.beeradvocate.com/im/beers/<%=beer_hash[:url]%>.jpg" alt="<%= beer_hash[:name]%> picture">
+    <div class="d-flex flex-column bd-highlight mb-3">
+      <div class="p-2 m-2 mt-4 bd-highlight bg-light font-weight-bold h6"><%=beer_hash[:name]%></div>
+      <div class="p-2 m-2 bd-highlight font-italic">Brewery: <%=beer_hash[:brewery]%></div>
+      <div class="p-2 m-2 bd-highlight">Style: <%=beer_hash[:style]%> </div>
+    </div>
+  </div>
+  <a class="btn btn-info w-50 mt-4" href="/add_ba/<%=beer_hash[:url]%>">Add beer</a>
 </div>
 <%end%>
