@@ -70,7 +70,6 @@ get '/delete/:id' do
 end
 
 # -- TODO --
-# CSS (Bootstrap?)
-# Add confirmation screen to adding beers? (modal on bootstrap?)
-# Nav bar in layout? - click for options, add etc
+# Handle non existing beers on scrape and less than 5 results
+# Add clickable breweries which return all the beers by that brewery
 # Research how to save images and then reference them in the DB
