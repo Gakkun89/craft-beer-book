@@ -1,15 +1,34 @@
-<h3> Add <%=@beer[:name]%>?</h3>
+<h3 class="mt-2 mb-2"> Add <%=@beer[:name]%>?</h3>
 
 <div class="beer-card">
  <form method="POST" action="/add_ba/<%=@url%>">
   <img src="https://cdn.beeradvocate.com/im/beers/<%=@url%>.jpg" alt="Beer image">
-  <label for="name">Name: </label><input name="name" type="text" value="<%=@beer[:name]%>">
-  <label for="brewery">Brewery: </label> <input type="text" name="brewery" value="<%=@beer[:brewery]%>">
-  <label for="abv">ABV:</label>  <input type="number" name="abv" value="<%=@beer[:abv]%>">%
-  <label for="style">Style:</label>  <input type="text" name="style" value="<%=@beer[:style]%>">
-  <label for="notes">Notes:</label>  <input type="text" name="notes">
-  <label for="uscore">Your score:</label><input type="number" name="uscore" placeholder="0.0" step="0.1" min="0" max="5"> /5
-  <label for="bascore">BA Score:</label> <input type="number" name="bascore" value="<%=@beer[:bascore]%>"> /100
-  <input type="submit" value="Add to Collection">
+  <div class="form-group">
+    <label for="name">Name: </label>
+    <input  class= "form-control" name="name" type="text" value="<%=@beer[:name]%>">
+  </div>
+    <label for="brewery">Brewery: </label>
+    <input class= "form-control" type="text" name="brewery" value="<%=@beer[:brewery]%>">
+  <div class="form-group">
+    <label for="abv">ABV:</label>
+    <input class= "form-control" type="number" name="abv" value="<%=@beer[:abv]%>">
+  </div>
+  <div class="form-group">
+    <label for="style">Style:</label>
+    <input class= "form-control" type="text" name="style" value="<%=@beer[:style]%>">
+  </div>
+  <div class="form-group">
+    <label for="notes">Notes:</label>
+    <input class= "form-control" type="text" name="notes">
+  </div>
+  <div class="form-group">
+    <label for="uscore">Your score (out of 5):</label>
+    <input class= "form-control" type="number" name="uscore" placeholder="0.0" step="0.1" min="0" max="5">
+  </div>
+  <div class="form-group">
+    <label for="bascore">BA Score:</label>
+    <input class= "form-control" type="number" name="bascore" value="<%=@beer[:bascore]%>">
+  </div>
+  <button type="submit" class="btn btn-info beer-confirm mb-4" data-confirm="Are you sure you want to add this beer?">Add to Beer Book</button>
   </form>
 </div>

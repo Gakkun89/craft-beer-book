@@ -11,5 +11,7 @@
       <div class="p-2 m-2 bd-highlight">User Score: <%= @beer["uscore"] %></div>
     </div>
   </div>
-  <a class="btn btn-danger w-50 mt-4 beer-confirm" href="/delete/<%=@beer["id"] %>" data-confirm="Are you sure you want to delete this beer?">Delete beer</a>
+  <form action="/delete/<%=@beer["id"] %>">
+    <button type="submit" class="btn btn-danger mt-4 beer-confirm" data-confirm="Are you sure you want to delete this beer?">Delete beer</button>
+  </form>
 </div>
