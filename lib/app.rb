@@ -60,7 +60,7 @@ post '/madd' do
               style: params[:style],
               notes: params[:notes],
               uscore: params[:uscore],
-              img: params[:img])
+              img: "nil")
   redirect "/"
 end
 
