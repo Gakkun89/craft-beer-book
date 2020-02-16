@@ -6,7 +6,7 @@ require 'erb'
 # And connect to the database
 config_path = File.join(File.dirname(__FILE__), "database.yml")
 ActiveRecord::Base.configurations = YAML.load_file(config_path)
-ActiveRecord::Base.establish_connection(:development)
+ActiveRecord::Base.establish_connection(:production)
 
 # Set a logger so that you can view the SQL actually performed by ActiveRecord
 logger = Logger.new(STDOUT)
