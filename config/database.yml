@@ -7,7 +7,7 @@ development:
   timeout: 5000
 
 production:
-  url: <%= URI.encode(ENV['DATABASE_URL'])%>
+  url: <%= URI.ENV['DATABASE_URL']%>
   adapter: postgresql
   database: mydb
   host: localhost
