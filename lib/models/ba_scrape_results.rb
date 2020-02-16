@@ -80,6 +80,7 @@ class BAScraperResults
     }
   end
   # Get the url endings for each beer to make image scraping etc easier
+
   def beer_profiles
     @profiles = []
     @raw_profiles = @doc.xpath('//div/a/@href')[5..14].map { |text| text.text.strip }
