@@ -9,6 +9,7 @@ gem "faker"
 gem "pry-byebug"
 gem "pg"
 gem "nokogiri"
+gem "rake"
 
 group :development do
   gem "sqlite3"
