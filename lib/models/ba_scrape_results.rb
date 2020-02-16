@@ -3,7 +3,8 @@ require "open-uri"
 
 class BAScraperResults
   def initialize(query)
-    @url = "https://www.beeradvocate.com/search/?q=#{query}"
+    # @url = "https://www.beeradvocate.com/search/?q=#{query}"
+    @url = "lib/models/notfound.html"
     @doc = Nokogiri::HTML(open(@url))
     @names = []
     @descriptions = []
@@ -24,8 +25,24 @@ class BAScraperResults
     @doc.search('.muted a').first(10).each do |description|
       @descriptions << description.text
     end
+    check_for_results
+  end
+
+  # Check if there are any results
+  def check_for_results
+    if @names[0] == "You can also try results from Google..."
+      return {
+        beer_1: {
+          name: "Sorry no results found on BA",
+          brewery: "",
+          style: "",
+          url: ""
+        }
+      }
+    end
     create_result_hash
   end
+
   # Create a hash of results with number then beer name, brewery, style and url info
 
   def create_result_hash
@@ -73,3 +90,5 @@ class BAScraperResults
     @profiles = @profiles.uniq
   end
 end
+
+p BAScraperResults.new("lol").search_title_scrape
