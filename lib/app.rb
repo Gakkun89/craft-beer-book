@@ -3,13 +3,14 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'sqlite3'
+require 'pg'
 require 'sinatra/activerecord'
 require_relative 'models/beer'
 require_relative 'models/ba_scrape_results'
 require_relative 'models/ba_scrape_profile'
 
-DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/craft-beer-book'))
-DB.results_as_hash = true
+# DB = SQLite3::Database.new(File.join(File.dirname(__FILE__), 'db/craft-beer-book'))
+# DB.results_as_hash = true
 get '/' do
   @beers = Beer.all.order(name: :asc)
   erb :home
