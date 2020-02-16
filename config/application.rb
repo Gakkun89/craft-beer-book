@@ -1,5 +1,6 @@
 require 'active_record'
 require 'yaml'
+require 'erb'
 
 # This is some boilerplate code to read the config/database.yml file
 # And connect to the database
