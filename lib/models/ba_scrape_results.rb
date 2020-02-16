@@ -3,8 +3,7 @@ require "open-uri"
 
 class BAScraperResults
   def initialize(query)
-    # @url = "https://www.beeradvocate.com/search/?q=#{query}"
-    @url = "lib/models/notfound.html"
+    @url = "https://www.beeradvocate.com/search/?q=#{query}"
     @doc = Nokogiri::HTML(open(@url))
     @names = []
     @descriptions = []
@@ -90,5 +89,3 @@ class BAScraperResults
     @profiles = @profiles.uniq
   end
 end
-
-p BAScraperResults.new("lol").search_title_scrape
