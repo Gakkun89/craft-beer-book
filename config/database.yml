@@ -1,3 +1,5 @@
+require 'uri'
+
 development:
   adapter: sqlite3
   database: lib/db/craft-beer-book
@@ -6,7 +8,7 @@ development:
   timeout: 5000
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= URI.encode(ENV['DATABASE_URL'])%>
   adapter: postgresql
   database: mydb
   host: localhost
